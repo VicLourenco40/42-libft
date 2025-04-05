@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/04 13:33:53 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/05 11:26:56 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/05 11:26:17 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/05 11:36:43 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-# include <stddef.h>
+#include <stddef.h>
 
-int		ft_isalpha(int c);
-int		ft_isdigit(int c);
-int		ft_isalnum(int c);
-int		ft_isascii(int c);
-int		ft_isprint(int c);
-size_t	ft_strlen(const char *s);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memcpy(void *dest, const void *src, size_t n)
+{
+	unsigned char		*dest_ptr;
+	const unsigned char	*src_ptr;
+	size_t				i;
 
-#endif
+	dest_ptr = dest;
+	src_ptr = src;
+	i = 0;
+	while (i < n)
+	{
+		dest_ptr[i] = src_ptr[i];
+		i++;
+	}
+	return (dest);
+}
