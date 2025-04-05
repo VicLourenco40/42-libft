@@ -6,11 +6,10 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:49:32 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/05 16:41:28 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/05 17:49:49 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
 #include "libft.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t size)
