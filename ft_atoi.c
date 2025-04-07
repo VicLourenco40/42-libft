@@ -6,11 +6,10 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 14:20:23 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/07 15:32:33 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/07 15:49:42 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdbool.h>
 #include "libft.h"
 
 static int	isspace(int c)
@@ -20,18 +19,18 @@ static int	isspace(int c)
 
 int	ft_atoi(const char *nptr)
 {
-	int		i;
-	int		res;
-	bool	neg;
+	int	i;
+	int	res;
+	int	neg;
 
 	i = 0;
 	while (isspace(nptr[i]))
 		i++;
-	neg = false;
+	neg = 1;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
 		if (nptr[i] == '-')
-			neg = true;
+			neg = -1;
 		i++;
 	}
 	res = 0;
@@ -40,7 +39,5 @@ int	ft_atoi(const char *nptr)
 		res = res * 10 + nptr[i] - 48;
 		i++;
 	}
-	if (neg)
-		res *= -1;
-	return (res);
+	return (res * neg);
 }
