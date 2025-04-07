@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 11:46:51 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/07 12:05:04 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/07 12:28:54 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
-	const unsigned char *s_ptr;
+	const unsigned char	*s_ptr;
 	unsigned char		byte;
-	size_t 				i;
+	size_t				i;
 
 	s_ptr = s;
 	byte = c;
