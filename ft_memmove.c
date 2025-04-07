@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 13:13:13 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/05 14:05:38 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/07 10:11:34 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,23 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 	dest_ptr = dest;
 	src_ptr = src;
-	i = n;
-	while (i)
+	if (dest < src)
 	{
-		dest_ptr[i - 1] = src_ptr[i - 1];
-		i--;
+		i = 0;
+		while (i < n)
+		{
+			dest_ptr[i] = src_ptr[i];
+			i++;
+		}
+	}
+	else
+	{
+		i = n;
+		while (i)
+		{
+			dest_ptr[i - 1] = src_ptr[i - 1];
+			i--;
+		}
 	}
 	return (dest);
 }
