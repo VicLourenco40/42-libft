@@ -1,38 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 12:33:37 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/07 14:17:42 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/07 14:20:23 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/07 15:32:33 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include "libft.h"
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+static int	isspace(int c)
 {
-	size_t	little_len;
-	size_t	i;
-	size_t	j;
+	return ((c >= 9 && c <= 13) || c == ' ');
+}
 
-	if (!*little)
-		return ((char *) big);
-	little_len = ft_strlen(little);
+int	ft_atoi(const char *nptr)
+{
+	int		i;
+	int		res;
+	bool	neg;
+
 	i = 0;
-	while (big[i] && i + little_len <= len)
+	while (isspace(nptr[i]))
+		i++;
+	neg = false;
+	if (nptr[i] == '-' || nptr[i] == '+')
 	{
-		if (big[i] == *little)
-		{
-			j = 0;
-			while (big[i + j] && little[j] && big[i + j] == little[j])
-				j++;
-			if (j == little_len)
-				return ((char *) &big[i]);
-		}
+		if (nptr[i] == '-')
+			neg = true;
 		i++;
 	}
-	return (NULL);
+	res = 0;
+	while (ft_isdigit(nptr[i]))
+	{
+		res = res * 10 + nptr[i] - 48;
+		i++;
+	}
+	if (neg)
+		res *= -1;
+	return (res);
 }
