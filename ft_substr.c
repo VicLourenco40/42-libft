@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:44:33 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/08 15:13:28 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/08 15:23:25 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr = malloc(sizeof(char) * (substr_len + 1));
 	if (!substr)
 		return (NULL);
-	ft_memcpy(substr, &s[start], substr_len);
-	substr[substr_len] = '\0';
+	ft_strlcpy(substr, &s[start], substr_len + 1);
 	return (substr);
 }
