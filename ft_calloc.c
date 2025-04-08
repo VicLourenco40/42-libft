@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 09:29:15 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/08 12:01:52 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/08 14:39:20 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	unsigned char	*ptr;
 	size_t			total_size;
+	unsigned char	*ptr;
 
-	if (nmemb && size)
-		total_size = nmemb * size;
-	else
-		total_size = 1;
+	total_size = nmemb * size;
 	if (total_size > INT_MAX)
 		return (NULL);
 	ptr = malloc(total_size);
