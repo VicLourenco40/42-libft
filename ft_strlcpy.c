@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/05 14:49:32 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/05 17:49:49 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/08 14:15:27 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	src_len;
 
 	src_len = ft_strlen(src);
-	if (size == 0)
+	if (!size)
 		return (src_len);
 	i = 0;
 	while (i + 1 < size && i < src_len)
