@@ -6,28 +6,26 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:53:09 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/09 16:19:46 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/09 16:30:00 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "libft.h"
-
-static void	putnbr_fd(long num, int fd)
-{
-	if (num / 10)
-		putnbr_fd( num / 10, fd);
-	ft_putchar_fd('0' + num % 10, fd);
-}
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long	num;
-
-	num = n;
-	if (num < 0)
+	if (n == INT_MIN)
 	{
-		num = -num;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		n = -n;
 		ft_putchar_fd('-', fd);
 	}
-	putnbr_fd(num, fd);
+	if (n / 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd('0' + (n % 10), fd);
 }
