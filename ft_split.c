@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:43:54 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/09 12:22:17 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/10 12:54:34 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,19 @@
 static unsigned int	count_strings(const char *s, char c)
 {
 	unsigned int	i;
-	unsigned int	is_string;
+	unsigned int	in_string;
 	unsigned int	count;
 
 	i = 0;
-	is_string = 0;
+	in_string = 0;
 	count = 0;
 	while (s[i])
 	{
 		if (s[i] == c)
-			is_string = 0;
-		else if (!is_string)
+			in_string = 0;
+		else if (!in_string)
 		{
-			is_string = 1;
+			in_string = 1;
 			count++;
 		}
 		i++;
@@ -51,30 +51,43 @@ static char	*get_string(const char *s, char c)
 	return (string);
 }
 
-char	**ft_split(const char *s, char c)
+static void	free_strings(char ***strings)
 {
 	unsigned int	i;
-	unsigned int	j;
+
+	i = 0;
+	while (*strings[i])
+	{
+		free(*strings[i]);
+		i++;
+	}
+	free(*strings);
+	*strings = NULL;
+}
+
+char	**ft_split(const char *s, char c)
+{
+	int				i;
+	int				j;
 	unsigned int	count;
-	unsigned int	is_string;
+	unsigned int	in_string;
 	char			**strings;
 
 	count = count_strings(s, c);
-	strings = malloc(sizeof(char *) * (count + 1));
-	if (!strings)
-		return (NULL);
-	strings[count] = NULL;
+	strings = ft_calloc(sizeof(char *), count + 1);
 	i = -1;
 	j = -1;
-	is_string = 0;
-	while (s[++i])
+	in_string = 0;
+	while (strings && s[++i])
 	{
 		if (s[i] == c)
-			is_string = 0;
-		else if (!is_string)
+			in_string = 0;
+		else if (!in_string)
 		{
-			is_string = 1;
+			in_string = 1;
 			strings[++j] = get_string(&s[i], c);
+			if (!strings[j])
+				free_strings(&strings);
 		}
 	}
 	return (strings);
