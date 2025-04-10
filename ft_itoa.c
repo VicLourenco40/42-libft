@@ -6,22 +6,24 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:14:14 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/09 14:02:39 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/10 11:26:21 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
+#include <limits.h>
+#include "libft.h"
 
-static unsigned int	get_digits(long num)
+static unsigned int	get_digits(int n)
 {
 	unsigned int	i;
 
-	if (num == 0)
+	if (n == 0)
 		return (1);
 	i = 0;
-	while (num)
+	while (n)
 	{
-		num /= 10;
+		n /= 10;
 		i++;
 	}
 	return (i);
@@ -32,14 +34,14 @@ char	*ft_itoa(int n)
 	int				i;
 	int				neg;
 	unsigned int	digits;
-	long			num;
 	char			*string;
 
-	num = n;
-	neg = num < 0;
+	if (n == INT_MIN)
+		return (ft_strdup("-2147483648"));
+	neg = n < 0;
 	if (neg)
-		num = -num;
-	digits = get_digits(num);
+		n = -n;
+	digits = get_digits(n);
 	string = malloc(sizeof(char) * (digits + neg + 1));
 	if (!string)
 		return (NULL);
@@ -49,8 +51,8 @@ char	*ft_itoa(int n)
 	i = digits + neg - 1;
 	while (i >= neg)
 	{
-		string[i] = '0' + (num % 10);
-		num /= 10;
+		string[i] = '0' + (n % 10);
+		n /= 10;
 		i--;
 	}
 	return (string);
