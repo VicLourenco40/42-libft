@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:43:54 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/11 17:33:04 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:34:30 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	*free_strings(char **strings)
 	i = 0;
 	while (strings[i])
 	{
-		free(*strings[i]);
+		free(strings[i]);
 		i++;
 	}
 	free(strings);
