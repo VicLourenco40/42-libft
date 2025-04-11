@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:43:54 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/10 12:54:34 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/11 17:33:04 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,44 +51,44 @@ static char	*get_string(const char *s, char c)
 	return (string);
 }
 
-static void	free_strings(char ***strings)
+static void	*free_strings(char **strings)
 {
 	unsigned int	i;
 
 	i = 0;
-	while (*strings[i])
+	while (strings[i])
 	{
 		free(*strings[i]);
 		i++;
 	}
-	free(*strings);
-	*strings = NULL;
+	free(strings);
+	return (NULL);
 }
 
 char	**ft_split(const char *s, char c)
 {
-	int				i;
-	int				j;
-	unsigned int	count;
+	unsigned int	i;
+	unsigned int	j;
 	unsigned int	in_string;
 	char			**strings;
 
-	count = count_strings(s, c);
-	strings = ft_calloc(sizeof(char *), count + 1);
-	i = -1;
-	j = -1;
+	strings = ft_calloc(sizeof(char *), count_strings(s, c) + 1);
+	i = 0;
+	j = 0;
 	in_string = 0;
-	while (strings && s[++i])
+	while (strings && s[i])
 	{
 		if (s[i] == c)
 			in_string = 0;
 		else if (!in_string)
 		{
 			in_string = 1;
-			strings[++j] = get_string(&s[i], c);
+			strings[j] = get_string(&s[i], c);
 			if (!strings[j])
-				free_strings(&strings);
+				return (free_strings(strings));
+			j++;
 		}
+		i++;
 	}
 	return (strings);
 }
