@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/08 14:44:33 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/08 15:23:25 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/14 14:32:43 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	s_len = ft_strlen(s);
 	if (start > s_len)
-		return (NULL);
+		return (ft_calloc(1, sizeof(char)));
 	if (start + len > s_len)
 		substr_len = s_len - start;
 	else
