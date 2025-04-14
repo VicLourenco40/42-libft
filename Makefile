@@ -7,11 +7,12 @@ OBJECTS = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 		  ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o \
 		  ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 BOBJECTS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
-		   ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o ft_lstmap.o
+		   ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o \
+		   ft_lstmap.o
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
 
 all: $(NAME)
 
