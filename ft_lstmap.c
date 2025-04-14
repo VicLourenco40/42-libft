@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/14 10:43:58 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 11:12:56 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/14 11:15:04 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*node;
 	void	*node_content;
 
-	if (!lst || !f || !del)
+	if (!f || !del)
 		return (NULL);
 	new = NULL;
 	while (lst)
