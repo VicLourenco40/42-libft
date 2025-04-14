@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:19:21 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 14:54:59 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/14 15:33:29 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_strtrim(const char *s1, const char *set)
 	if (start + end < s1_len)
 		len = s1_len - start - end;
 	else
-		len = 1;
+		len = 0;
 	new = malloc(sizeof(char) * (len + 1));
 	if (!new)
 		return (NULL);
