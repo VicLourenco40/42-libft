@@ -1,33 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/05 16:42:54 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/05 17:34:19 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/09 15:23:15 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:39:56 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
+#include <libft.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
-
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	if (dst_len >= size)
-		return (size + src_len);
-	i = 0;
-	while (dst_len + i + 1 < size && i < src_len)
-	{
-		dst[dst_len + i] = src[i];
-		i++;
-	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	write(fd, s, ft_strlen(s));
 }

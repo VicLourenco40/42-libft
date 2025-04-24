@@ -6,12 +6,12 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:19:21 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 15:33:29 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:33:02 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include <libft.h>
 
 char	*ft_strtrim(const char *s1, const char *set)
 {

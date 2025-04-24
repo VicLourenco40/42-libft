@@ -1,40 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstmap.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/14 10:43:58 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 16:42:26 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/09 14:16:07 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:33:30 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+#include <libft.h>
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	t_list	*new;
-	t_list	*node;
-	void	*node_content;
+	unsigned int	i;
+	unsigned int	s_len;
+	char			*new;
 
-	if (!f)
+	s_len = ft_strlen(s);
+	new = malloc(sizeof(char) * (s_len + 1));
+	if (!new)
 		return (NULL);
-	new = NULL;
-	while (lst)
+	new[s_len] = '\0';
+	i = 0;
+	while (i < s_len)
 	{
-		node_content = f(lst->content);
-		node = ft_lstnew(node_content);
-		if (!node || !node_content)
-		{
-			if (del)
-				del(node_content);
-			ft_lstdelone(node, del);
-			ft_lstclear(&new, del);
-			return (NULL);
-		}
-		ft_lstadd_back(&new, node);
-		lst = lst->next;
+		new[i] = f(i, s[i]);
+		i++;
 	}
 	return (new);
 }

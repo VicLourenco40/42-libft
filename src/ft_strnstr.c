@@ -6,11 +6,11 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/07 12:33:37 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/07 14:17:42 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:32:07 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

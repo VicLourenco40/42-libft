@@ -1,25 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 14:22:03 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 13:30:02 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/05 11:14:01 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:30:47 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <libft.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_bzero(void *s, size_t n)
 {
-	if (!lst || !*lst)
-		return ;
-	ft_lstclear(&(*lst)->next, del);
-	if (del)
-		del((*lst)->content);
-	free(*lst);
-	*lst = NULL;
+	ft_memset(s, 0, n);
 }

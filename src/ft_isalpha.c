@@ -1,18 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:23:15 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/09 15:25:34 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/04 11:00:07 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:28:56 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
+static int	isupper(int c)
 {
-	write(fd, &c, 1);
+	return (c >= 'A' && c <= 'Z');
+}
+
+static int	islower(int c)
+{
+	return (c >= 'a' && c <= 'z');
+}
+
+int	ft_isalpha(int c)
+{
+	return (isupper(c) || islower(c));
 }

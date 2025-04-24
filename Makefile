@@ -1,34 +1,46 @@
-NAME = libft.a
-OBJECTS = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
-		  ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o \
-		  ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o \
-		  ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o \
-		  ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o \
-		  ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o \
-		  ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
-BOBJECTS = ft_lstnew.o ft_lstadd_front.o ft_lstsize.o ft_lstlast.o \
-		   ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o ft_lstiter.o \
-		   ft_lstmap.o
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/04/24 09:54:32 by vde-albu          #+#    #+#              #
+#    Updated: 2025/04/24 11:27:48 by vde-albu         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-.PHONY: all clean fclean re bonus
+NAME = libft.a
+CC = cc
+CFLAGS = -Wall -Wextra -Werror -I $(IDIR)
+SDIR = src
+IDIR = include
+ODIR = obj
+OBJ = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
+	  ft_strlen.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o ft_strlcpy.o \
+	  ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o ft_strrchr.o \
+	  ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o ft_atoi.o ft_calloc.o \
+	  ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o \
+	  ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o \
+	  ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o \
+	  ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o \
+	  ft_lstiter.o ft_lstmap.o
+
+.PHONY: all clean fclean re
 
 all: $(NAME)
 
 clean:
-	rm -f $(OBJECTS) $(BOBJECTS)
+	rm -fr $(ODIR)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-bonus: $(BOBJECTS)
-	ar r $(NAME) $(BOBJECTS)
+$(NAME): $(addprefix $(ODIR)/, $(OBJ))
+	ar r $@ $^
 
-$(NAME): $(OBJECTS)
-	ar r $(NAME) $(OBJECTS)
-
-$(OBJECTS) $(BOBJECTS): %.o: %.c
-	$(CC) $(CFLAGS) -c $^
+$(addprefix $(ODIR)/, $(OBJ)): $(ODIR)/%.o: $(SDIR)/%.c
+	mkdir -p $(ODIR)
+	$(CC) $(CFLAGS) -o $@ -c $<

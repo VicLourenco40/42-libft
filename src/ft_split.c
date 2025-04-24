@@ -6,12 +6,12 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 10:43:54 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/11 17:34:30 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:33:09 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include "libft.h"
+#include <libft.h>
 
 static unsigned int	count_strings(const char *s, char c)
 {

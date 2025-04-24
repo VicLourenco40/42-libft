@@ -6,13 +6,13 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:14:14 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/10 11:26:21 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/04/24 11:33:25 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <limits.h>
-#include "libft.h"
+#include <libft.h>
 
 static unsigned int	get_digits(int n)
 {

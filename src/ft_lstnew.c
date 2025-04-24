@@ -1,31 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/09 15:53:09 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/09 16:30:00 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/10 15:15:55 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:35:05 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
-#include "libft.h"
+#include <stdlib.h>
+#include <libft.h>
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (n == INT_MIN)
-	{
-		ft_putstr_fd("-2147483648", fd);
-		return ;
-	}
-	if (n < 0)
-	{
-		n = -n;
-		ft_putchar_fd('-', fd);
-	}
-	if (n / 10)
-		ft_putnbr_fd(n / 10, fd);
-	ft_putchar_fd('0' + (n % 10), fd);
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
 }

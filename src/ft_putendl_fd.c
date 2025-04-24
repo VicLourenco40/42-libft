@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/10 17:03:25 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/11 09:46:10 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/09 15:44:01 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:34:27 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <libft.h>
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_putendl_fd(char *s, int fd)
 {
-	new->next = *lst;
-	*lst = new;
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/11 12:11:04 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 13:29:08 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/04/09 15:53:09 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/04/24 11:34:39 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft.h"
+#include <limits.h>
+#include <libft.h>
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+void	ft_putnbr_fd(int n, int fd)
 {
-	if (!lst)
+	if (n == INT_MIN)
+	{
+		ft_putstr_fd("-2147483648", fd);
 		return ;
-	if (del)
-		del(lst->content);
-	free(lst);
+	}
+	if (n < 0)
+	{
+		n = -n;
+		ft_putchar_fd('-', fd);
+	}
+	if (n / 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd('0' + (n % 10), fd);
 }
