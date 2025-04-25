@@ -6,13 +6,15 @@
 #    By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 09:54:32 by vde-albu          #+#    #+#              #
-#    Updated: 2025/04/24 13:22:44 by vde-albu         ###   ########.fr        #
+#    Updated: 2025/04/25 12:12:43 by vde-albu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -I $(IDIR)
+AR = ar
+ARFLAGS = rc
 SDIR = src/
 IDIR = include/
 ODIR = obj/
@@ -24,7 +26,8 @@ OBJ = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	  ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o \
 	  ft_putendl_fd.o ft_putnbr_fd.o ft_lstnew.o ft_lstadd_front.o \
 	  ft_lstsize.o ft_lstlast.o ft_lstadd_back.o ft_lstdelone.o ft_lstclear.o \
-	  ft_lstiter.o ft_lstmap.o ft_get_next_line.o
+	  ft_lstiter.o ft_lstmap.o ft_printf.o print.o ft_get_next_line.o
+OBJS = $(patsubst %, $(ODIR)%, $(OBJ))
 
 .PHONY: all clean fclean re
 
@@ -38,9 +41,9 @@ fclean: clean
 
 re: fclean all
 
-$(NAME): $(addprefix $(ODIR), $(OBJ))
-	ar r $@ $^
+$(NAME): $(OBJS)
+	$(AR) $(ARFLAGS) $@ $^
 
-$(addprefix $(ODIR), $(OBJ)): $(ODIR)%.o: $(SDIR)%.c
+$(OBJS): $(ODIR)%.o: $(SDIR)%.c
 	mkdir -p $(ODIR)
 	$(CC) $(CFLAGS) -o $@ -c $<
