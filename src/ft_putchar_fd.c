@@ -6,13 +6,13 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 15:23:15 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/24 11:34:16 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/05/13 12:01:03 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_putchar_fd(const char c, const int fd)
 {
 	write(fd, &c, 1);
 }

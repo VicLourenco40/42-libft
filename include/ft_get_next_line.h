@@ -6,14 +6,14 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 11:40:07 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/25 12:04:31 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/05/13 16:50:44 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_GET_NEXT_LINE_H
 # define FT_GET_NEXT_LINE_H
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 1
 # endif
 
 char	*ft_get_next_line(int fd);
