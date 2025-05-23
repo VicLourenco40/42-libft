@@ -6,11 +6,11 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 16:18:19 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/04 16:19:14 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/05/19 11:21:11 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_isprint(const int c)
 {
 	return (c >= 32 && c <= 126);
 }

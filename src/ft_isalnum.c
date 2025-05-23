@@ -6,13 +6,13 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 14:36:53 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/24 11:30:19 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/05/19 11:20:53 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-int	ft_isalnum(int c)
+int	ft_isalnum(const int c)
 {
 	return (ft_isalpha(c) || ft_isdigit(c));
 }
