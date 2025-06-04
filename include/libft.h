@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:33:53 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/05/19 11:21:20 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/06/04 12:51:43 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int		ft_isascii(const int c);
 int		ft_isprint(const int c);
 int		ft_isspace(const int c);
 size_t	ft_strlen(const char *s);
+int		ft_max(const int n1, const int n2);
+int		ft_min(const int n1, const int n2);
+int		ft_abs(const int n);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
