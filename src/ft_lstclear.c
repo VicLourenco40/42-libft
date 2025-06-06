@@ -6,14 +6,14 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 14:22:03 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/24 11:35:34 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/06/06 14:32:50 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <libft.h>
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_lstclear(t_list **lst, void (*del)())
 {
 	if (!lst || !*lst)
 		return ;

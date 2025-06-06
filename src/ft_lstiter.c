@@ -6,13 +6,13 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/11 16:19:56 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/24 11:35:40 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/06/06 14:33:04 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)())
 {
 	if (!f)
 		return ;
