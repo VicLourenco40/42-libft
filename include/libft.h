@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/04 13:33:53 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/06/06 13:43:36 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/06/10 14:36:33 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ size_t	ft_strlen(const char *s);
 int		ft_max(const int n1, const int n2);
 int		ft_min(const int n1, const int n2);
 int		ft_abs(const int n);
+int		ft_clamp(const int n, const int min, const int max);
 void	*ft_memset(void *s, int c, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
