@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/12 18:00:09 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/06/12 18:03:35 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/06/13 10:25:09 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,4 +15,11 @@ int	ft_sign(const int n)
 	if (n < 0)
 		return (-1);
 	return (1);
+}
+
+float	ft_signf(const float n)
+{
+	if (n < 0.0f)
+		return (-1.0f);
+	return (1.0f);
 }
