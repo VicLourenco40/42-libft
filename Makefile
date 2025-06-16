@@ -6,7 +6,7 @@
 #    By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/24 09:54:32 by vde-albu          #+#    #+#              #
-#    Updated: 2025/06/12 18:04:19 by vde-albu         ###   ########.fr        #
+#    Updated: 2025/06/16 11:02:16 by vde-albu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ IDIR = include/
 ODIR = obj/
 OBJ = ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o \
 	  ft_isspace.o ft_strlen.o ft_max.o ft_min.o ft_abs.o ft_clamp.o \
-	  ft_clampf.o ft_sign.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o \
+	  ft_sign.o ft_memset.o ft_bzero.o ft_memcpy.o ft_memmove.o \
 	  ft_strlcpy.o ft_strlcat.o ft_toupper.o ft_tolower.o ft_strchr.o \
 	  ft_strrchr.o ft_strncmp.o ft_memchr.o ft_memcmp.o ft_strnstr.o \
 	  ft_atoi.o ft_calloc.o ft_strdup.o ft_substr.o ft_strjoin.o ft_strtrim.o \
