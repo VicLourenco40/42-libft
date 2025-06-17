@@ -6,7 +6,7 @@
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/09 13:14:14 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/06/17 12:15:41 by vde-albu         ###   ########.fr       */
+/*   Updated: 2025/06/17 12:22:00 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*ft_itoa(const int n)
 	return (str);
 }
 
-size_t	ft_itoa_cpy(const int n, char *const str)
+size_t	ft_itoa_cpy(char *const str, const int n)
 {
 	long		num;
 	const int	neg = n < 0;
