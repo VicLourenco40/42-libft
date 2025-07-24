@@ -1,31 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-albu <vde-albu@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/07 11:19:00 by vde-albu          #+#    #+#             */
-/*   Updated: 2025/04/14 14:19:57 by vde-albu         ###   ########.fr       */
+/*   Created: 2025/07/24 11:49:30 by vde-albu          #+#    #+#             */
+/*   Updated: 2025/07/24 12:10:07 by vde-albu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	ft_strcmp(const unsigned char *s1, const unsigned char *s2)
 {
-	unsigned char	u1;
-	unsigned char	u2;
-	size_t			i;
-
-	i = 0;
-	while ((s1[i] || s2[i]) && i < n)
+	while ((*s1 || *s2) && *s1 == *s2)
 	{
-		u1 = s1[i];
-		u2 = s2[i];
-		if (u1 != u2)
-			return (u1 - u2);
-		i++;
+		s1++;
+		s2++;
 	}
-	return (0);
+	return (*s1 - *s2);
+}
+
+int	ft_strncmp(const unsigned char *s1, const unsigned char *s2, size_t n)
+{
+	while (n-- && (*s1 || *s2) && *s1 == *s2)
+	{
+		s1++;
+		s2++;
+	}
+	return (*s1 - *s2);
 }
