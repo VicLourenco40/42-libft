@@ -12,28 +12,22 @@
 
 #include <stddef.h>
 
-int	ft_strcmp(const char *const s1, const char *const s2)
+int	ft_strcmp(const unsigned char *s1, const unsigned char *s2)
 {
-	const unsigned char *us1 = (void *) s1;
-	const unsigned char *us2 = (void *) s2;
-
-	while ((*us1 || *us2) && *us1 == *us2)
+	while ((*s1 || *s2) && *s1 == *s2)
 	{
-		us1++;
-		us2++;
+		s1++;
+		s2++;
 	}
-	return (*us1 - *us2);
+	return (*s1 - *s2);
 }
 
-int	ft_strncmp(const char *const s1, const char *const s2, size_t n)
+int	ft_strncmp(const unsigned char *s1, const unsigned char *s2, size_t n)
 {
-	const unsigned char *us1 = (void *) s1;
-	const unsigned char *us2 = (void *) s2;
-
-	while (n-- && (*us1 || *us2) && *us1 == *us2)
+	while (n-- && (*s1 || *s2) && *s1 == *s2)
 	{
-		us1++;
-		us2++;
+		s1++;
+		s2++;
 	}
-	return (*us1 - *us2);
+	return (*s1 - *s2);
 }
