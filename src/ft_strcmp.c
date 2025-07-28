@@ -24,10 +24,12 @@ int	ft_strcmp(const unsigned char *s1, const unsigned char *s2)
 
 int	ft_strncmp(const unsigned char *s1, const unsigned char *s2, size_t n)
 {
-	while (n-- && (*s1 || *s2) && *s1 == *s2)
+	while (n-- && (*s1 || *s2))
 	{
+		if (*s1 != *s2)
+			return (*s1 - *s2);
 		s1++;
 		s2++;
 	}
-	return (*s1 - *s2);
+	return (0);
 }
